@@ -4,10 +4,10 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
-;; Load functtions.
+;; Load functions.
 (load (expand-file-name "functions.el" user-emacs-directory))
 
-;; Package system.
+;; === Package system. ===
 (setq straight-use-package-by-default t)
 
 (defvar bootstrap-version)
@@ -25,7 +25,7 @@
 
 (straight-use-package 'use-package)
 
-;; Appearance.
+;; === Appearance. ===
 (use-package ample-theme
   :config (progn (load-theme 'ample-flat t t)
 		 (enable-theme 'ample-flat)))
@@ -45,7 +45,7 @@
 (global-hl-line-mode 1)
 (setq column-number-mode t)
 
-;; Completion.
+;; === Completion. ===
 (use-package helm
   :config
   (require 'helm-config)
@@ -69,7 +69,7 @@
 	which-key-idle-secondary-delay 0.5)
   (which-key-setup-side-window-bottom))
 
-;; Org.
+;; === Org. ===
 (setq org-directory (concat (getenv "HOME") "/Documents/Zettel/"))
 
 (use-package org
@@ -116,10 +116,10 @@
 
 (setq sentence-end-double-space nil)
 
-;; RSS.
+;; === RSS. ===
 ; TODO.
 
-;; Modal editing.
+;; === Modal editing. ===
 ;; NOTE: Don't put this section before (use-package org).
 (use-package ryo-modal
   :commands ryo-modal-mode
@@ -292,7 +292,7 @@
       ("f l" helm-mini)
 
       ;; Configuration.
-      (". o" donya/open-init-file)
+      (". i" donya/open-init-file)
 
       ;; Window.
       ("w c" delete-window)
